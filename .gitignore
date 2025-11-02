@@ -1,26 +1,30 @@
-# ------------------------------
 # Core ignore rules
-# ------------------------------
+.DS_Store
+Thumbs.db
 
-# Python
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python / PoC
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+*.egg-info/
+.env
+.venv/
+venv/
+env/
 
-# macOS
-.DS_Store
-
-# Node / npm
+# Node / tooling (念のため)
 node_modules/
 
-# Mermaid output
-*.svg
-*.png
+# OS / misc
+*.bak
 
-# VSCode
-.vscode/
-
-# Temp
-*.log
-*.tmp
+# Generated diagrams (optional)
+docs/architecture-diagram/*.png
 
