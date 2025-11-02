@@ -79,8 +79,8 @@ The architecture is designed to be **modular**, enabling deployment in IoT netwo
 
 ## 🧩 Repository Structure
 
+```
 federated-defense-reference/
-
 │
 ├── README.md
 ├── README_jp.md
@@ -105,10 +105,11 @@ federated-defense-reference/
 ├── assets/
 │  └── logo.svg
 │
-└── community/
+├── community/
 ├── CONTRIBUTING.md
 ├── CODE_OF_CONDUCT.md
 └── GOVERNANCE.md
+```
 
 >  🧩 **Note:** Some directories (e.g., `/poc`, `/community`, `/assets`) are placeholders for ongoing development and community materials.  
 >
