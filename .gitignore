@@ -1,50 +1,26 @@
 # ------------------------------
 # Core ignore rules
 # ------------------------------
-# System files
-.DS_Store
-Thumbs.db
 
-# IDE / Editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Python (for PoC scripts)
+# Python
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-*.egg-info/
-.env
-.venv/
-env/
-venv/
 
-# Build / temp files
+# macOS
+.DS_Store
+
+# Node / npm
+node_modules/
+
+# Mermaid output
+*.svg
+*.png
+
+# VSCode
+.vscode/
+
+# Temp
 *.log
 *.tmp
-*.bak
-*.cache
-*.lock
-*.out
-
-# Generated diagrams or previews
-/docs/architecture_diagrams/*.png
-/docs/architecture_diagrams/*.svg
-
-# AI / Model checkpoints (if added later)
-*.ckpt
-*.pt
-*.onnx
-
-# Local notes (not to publish)
-notes/
-drafts/
-local_config/
-
-# OS specific
-ehthumbs.db
-Icon?
 
