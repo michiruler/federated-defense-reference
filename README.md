@@ -1,107 +1,86 @@
----
-title: Federated Defense Reference
-description: Open, quantum-safe communication framework combining DID, PQC, and federated AI defense.
-topics: [post-quantum, DID, AI-security, decentralized-communication, federated-defense, open-protocol]
----
+# 🛡️ Federated Defense Reference: Open Quantum-Safe Communication Framework
 
-# Federated Defense Reference
-
-**An open, quantum-safe communication framework that combines Decentralized Identifiers (DID), Post-Quantum Cryptography (PQC), and Federated AI Defense.**
+**Federated Defense Reference** is an open research and implementation project for building a **Post-Quantum (PQ) secure, decentralized communication architecture** that integrates **Decentralized Identifiers (DID)**, **Post-Quantum Cryptography (PQC)**, and **Federated AI Defense**.  
+It aims to provide a resilient, privacy-preserving communication foundation for the next generation of secure and interoperable digital infrastructure.
 
 ---
 
-## 🌐 Overview
+## 🌍 Overview
 
-The **Federated Defense Reference Architecture** defines a next-generation, open communication backbone designed for **secure interoperability** across chat, IoT, and enterprise collaboration systems.
+This repository contains both conceptual documentation and working reference code for implementing a federated defense architecture that supports:
+- DID-based identity federation  
+- PQC hybrid key exchange (Kyber, Dilithium, Falcon)  
+- Federated AI anomaly detection and adaptive defense  
+- Low-bandwidth IoT-compatible secure messaging
 
-It integrates:
-- **Decentralized Identity (DID)** for verifiable identity management  
-- **Post-Quantum Cryptography (PQC)** for long-term data confidentiality  
-- **Federated AI-based intrusion detection** for real-time threat mitigation  
-- **Multi-Connector Protocol (MCP)** for linking platforms such as Teams, Slack, WeChat, and WhatsApp
-
-This framework aims to become a **universal backend**, replacing traditional email-style messaging with an **open, federated, and quantum-safe infrastructure**.
+The framework can operate **independently** or integrate with existing communication layers (e.g., Matrix, XMPP, WeChat, WhatsApp) for hybrid deployment.
 
 ---
 
-## 🧱 Layered Architecture
+## 🧠 Core Concept
 
-| Layer | Name                          | Description                                                  |
-| ----- | ----------------------------- | ------------------------------------------------------------ |
-| L1    | Physical / Transport          | TCP, WebRTC, or QUIC transport layer with channel encryption |
-| L2    | Cryptography & Authentication | PQC-based key exchange (Kyber, Dilithium, Falcon)            |
-| L3    | DID & Trust Registry          | Decentralized identity and verifiable credentials            |
-| L4    | Session & Routing             | Secure session establishment and multi-domain routing        |
-| L5    | Federated Defense             | Distributed AI-based anomaly detection and SOC collaboration |
-| L6    | Application Layer             | Chat, voice, video, IoT — via open APIs and SDK templates    |
+| Layer | Function   | Description                                                |
+| ----- | ---------- | ---------------------------------------------------------- |
+| L1    | Network    | Base transport (HTTP/3, QUIC, MQTT, or IoT protocols)      |
+| L2    | Encryption | PQC-based key negotiation and encryption (Kyber + AES-GCM) |
+| L3    | Identity   | DID-based authentication and signature management          |
+| L4    | Session    | Federated routing and dynamic trust layer                  |
+| L5    | Defense    | AI-driven anomaly detection and automated mitigation       |
+| L6    | Governance | Distributed reputation, compliance, and audit framework    |
 
-![Figure 1: Layered Architecture](./docs/architecture-diagram/fig1_layered_architecture.png)
-
-> See [docs/research-note_v0.1.md](./docs/research-note_v0.1.md) for detailed technical design and references.
+The architecture is designed to be **modular**, enabling deployment in IoT networks, federated enterprise systems, and public digital infrastructures.
 
 ---
 
-## 🔐 Security Design Principles
+## 🧩 Architecture Diagrams
 
-- **Quantum-Safe Encryption** — Implements NIST PQC standards (Kyber, Dilithium, Falcon)  
-- **Decentralized Identity (DID)** — Self-sovereign identity aligned with W3C DID Core  
-- **Federated AI Defense** — Local lightweight models detect anomalies; only metadata shared  
-- **Transparency & Openness** — All detection logic is open-source to avoid vendor lock-in  
-
----
-
-## ⚖️ Protocol Comparison
-
-| Protocol              | Open | Quantum-Safe | Decentralized ID | AI Defense | Federation |
-| --------------------- | ---- | ------------ | ---------------- | ---------- | ---------- |
-| Matrix                | ✅    | ❌            | ⚙️ (limited)      | ❌          | ✅          |
-| XMPP                  | ✅    | ❌            | ⚙️ (extensions)   | ❌          | ✅          |
-| MQTT                  | ✅    | ❌            | ❌                | ⚙️ (custom) | ⚙️          |
-| **Federated Defense** | ✅    | ✅            | ✅                | ✅          | ✅          |
-
-See [docs/pq-overhead-table.md](./docs/pq-overhead-table.md) for bandwidth and key-size overhead estimation.
+| File                            | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| `architecture-overview.mmd`     | Layered architecture (L1–L6) overview                        |
+| `communication-flow.mmd`        | DID + PQC hybrid key exchange and secure session establishment |
+| `layer-dependencies.mmd`        | Inter-layer dependency and feedback topology                 |
+| `fig1_layered_architecture.png` | Exported PNG version for publication                         |
+| `fig2_did_pqc_flow.png`         | Exported PNG version for publication                         |
+| `fig3_layer_dependencies.png`   | Exported PNG version for publication                         |
 
 ---
 
-## 📊 PQ Overhead Estimate (Summary)
+## ⚙️ Proof-of-Concept (PoC)
 
-| Algorithm   | Key Size (bytes) | Ciphertext | Signature | Relative Overhead |
-| ----------- | ---------------- | ---------- | --------- | ----------------- |
-| RSA-2048    | 256              | 256        | 256       | baseline          |
-| Kyber-768   | 1,184            | 1,088      | —         | +4.7×             |
-| Dilithium-3 | —                | —          | 2,700     | +10.5×            |
-| Falcon-512  | —                | —          | 690       | +2.7×             |
+| File                            | Description                                    |
+| ------------------------------- | ---------------------------------------------- |
+| `poc/pq_did_handshake_demo.py`  | Example of DID + PQC hybrid handshake sequence |
+| `poc/iot_low_bandwidth_test.py` | Simulated IoT low-bandwidth test environment   |
 
-> Estimated payload increase: **~3–6×** vs RSA/ECDH, mitigated via compression and session reuse.
+> 🧠 The PoC codes are intended as research demonstrations.  
+> Production-grade implementations should follow NIST PQC guidelines and W3C DID standards.
 
 ---
 
-## 📡 Example: PQ + DID Handshake
+## 📊 Research & Documentation
 
-```python
-from pqcrypto.kem.kyber512 import generate_keypair, encapsulate, decapsulate
-from didlib import DID, VerifiablePresentation
+| File                         | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| `docs/research-note_v0.1.md` | Core technical paper with references and citations           |
+| `docs/pq-overhead-table.md`  | NIST algorithm comparison & PQC overhead analysis            |
+| `docs/architecture-diagram/` | Mermaid diagrams for layered, flow, and dependency visualization |
 
-# 1. Generate PQ key pair
-pk, sk = generate_keypair()
+---
 
-# 2. Create DID and sign identity claim
-did = DID.create("did:federateddefense:node123")
-vp = VerifiablePresentation.create(did, {"service": "federated-node"}, sk)
+## 🤝 Community & Contribution
 
-# 3. Establish secure channel
-ciphertext, shared_secret_sender = encapsulate(pk)
-shared_secret_receiver = decapsulate(ciphertext, sk)
-assert shared_secret_sender == shared_secret_receiver
+| File                           | Description                                     |
+| ------------------------------ | ----------------------------------------------- |
+| `community/CONTRIBUTING.md`    | Contribution guidelines (issues, pull requests) |
+| `community/CODE_OF_CONDUCT.md` | Code of conduct and collaboration principles    |
+| `community/GOVERNANCE.md`      | Governance and decision-making model            |
 
-print("✅ PQC + DID channel established securely.")
-```
+---
 
-------
-
-## 📂 Repository Structure
+## 🧩 Repository Structure
 
 federated-defense-reference/
+
 │
 ├── README.md
 ├── README_jp.md
@@ -109,50 +88,53 @@ federated-defense-reference/
 ├── .gitignore
 │
 ├── docs/
-│   ├── research-note_v0.1.md
-│   ├── pq-overhead-table.md
-│   └── architecture-diagram/
-│       ├── architecture-overview.mmd
-│       ├── communication-flow.mmd
-│       ├── layer-dependencies.mmd
-│       ├── fig1_layered_architecture.png
-│       ├── fig2_did_pqc_flow.png
-│       └── fig3_layer_dependencies.png
+│  ├── research-note_v0.1.md
+│  ├── pq-overhead-table.md
+│  └── architecture-diagrams/
+│    ├── architecture-overview.mmd
+│    ├── communication-flow.mmd
+│    ├── layer-dependencies.mmd
+│    ├── fig1_layered_architecture.png
+│    ├── fig2_did_pqc_flow.png
+│    └── fig3_layer_dependencies.png
 │
 ├── poc/
-│   ├── pq_did_handshake_demo.py
-│   └── iot_low_bandwidth_test.py
+│  ├── pq_did_handshake_demo.py
+│  └── iot_low_bandwidth_test.py
 │
 ├── assets/
-│   └── logo.svg
+│  └── logo.svg
 │
 └── community/
-    ├── CONTRIBUTING.md
-    ├── CODE_OF_CONDUCT.md
-    └── GOVERNANCE.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+└── GOVERNANCE.md
 
-> 🧩 Note: Some directories (e.g., `/poc`, `/community`, `/assets`) are placeholders for ongoing development and community materials. They will be updated as the project evolves.
+>  🧩 **Note:** Some directories (e.g., `/poc`, `/community`, `/assets`) are placeholders for ongoing development and community materials.  
+>
+> They will be updated as the project evolves.
+
+---
+
+##  📜 License
+
+Licensed under the **Apache License 2.0**.  
+
+See [`LICENSE`](./LICENSE) for details.
+
+---
+
+##  🌐 Citation
+
+If you use this work in research or derivative projects, please cite it as:
+Aoki, M. (2025). Federated Defense Reference: Open Quantum-Safe Communication Framework Combining DID, PQC, and Federated AI Defense. GitHub Repository.
 
 ------
 
-## 🤝 Contributing
+## 💬 Contact
 
-Contributions and technical discussions are welcome!
- Please fork the repository, open a discussion, or submit a pull request.
-
-------
-
-## 📚 References
-
-1. W3C Decentralized Identifiers (DID) v1.0 – [https://www.w3.org/TR/did-core/](https://www.w3.org/TR/did-core/?utm_source=chatgpt.com)
-2. NIST PQC Standardization – [https://csrc.nist.gov/projects/post-quantum-cryptography](https://csrc.nist.gov/projects/post-quantum-cryptography?utm_source=chatgpt.com)
-3. IETF Messaging Layer Security (MLS) Draft – https://datatracker.ietf.org/doc/html/draft-ietf-mls-protocol
-4. IEEE Access: Federated AI Security in Edge Computing, 2024
-5. FIDO Alliance: PQC Roadmap – https://fidoalliance.org/
-
-------
-
-## 📜 License
-
-Licensed under the [Apache License 2.0](./LICENSE).
+**Project Lead:** Michiru Aoki
+GitHub: [@michiruler](https://github.com/michiruler)
+Location: Tokyo, Japan
+For collaboration or research inquiries, please open an issue or contact via GitHub Discussions.
 
