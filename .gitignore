@@ -2,25 +2,35 @@
 # Core ignore rules
 # ------------------------------
 
+# macOS
+.DS_Store
+
 # Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+.env
+.venv
+venv/
 
-# macOS
-.DS_Store
-
-# Node / npm
+# Node / npm / Mermaid
 node_modules/
-
-# Mermaid output
-*.svg
-*.png
+package-lock.json
 
 # VSCode
 .vscode/
+.idea/
 
 # Temp
 *.log
 *.tmp
 
+# Build / temp
+dist/
+build/
+
+# Local development workspace (ignored)
+tmp/
+workspace/
+sandbox/
