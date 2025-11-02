@@ -1,0 +1,15 @@
+flowchart TD
+
+    L1[Layer 1: Local Lightweight AI / Node-level Monitoring] --> L2[Layer 2: Open Detection Rules Registry]
+    L2 --> L3[Layer 3: Open Defense Protocol (Standardized Output)]
+    L3 --> L4[Layer 4: Trust Fabric (DID-signed, verifiable logs)]
+    L3 --> L5[Layer 5: Adaptive Encryption]
+    L4 --> L5
+    L3 --> L6[Layer 6: Cognitive Honeypot / Active Defense]
+    L4 --> L6
+    L6 --> L2
+    
+    note right of L4
+        L4 validates "who produced this detection"
+        and "was it tampered?"
+    end

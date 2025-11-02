@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant Client as Client/App
+    participant Core as PQ+DID Core
+    participant Defense as Defense Engine
+    participant MCP as MCP Connector
+    participant Ext as External Chat (Slack/Teams/WeChat)
+
+    Client->>Core: 1. PQ handshake (Kyber)
+    Core-->>Client: 2. Ephemeral session key
+    Client->>Core: 3. DID-signed message
+    Core->>Defense: 4. Submit message metadata for anomaly check
+    Defense-->>Core: 5. OK / Risk Score
+    alt Risk <= threshold
+        Core->>MCP: 6. Forward payload (standardized ODP format)
+        MCP->>Ext: 7. Deliver to target platform
+        Ext-->>Client: 8. Ack (via MCP)
+    else High Risk
+        Defense-->>Client: Blocked / request re-auth
+    end
