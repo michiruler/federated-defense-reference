@@ -1,141 +1,128 @@
-# 🛡️ Federated Defense Reference: Open Quantum-Safe Communication Framework
+# Flux–Echo: Secure Federated Communication Framework
 
-**Federated Defense Reference** is an open research and implementation project for building a **Post-Quantum (PQ) secure, decentralized communication architecture** that integrates **Decentralized Identifiers (DID)**, **Post-Quantum Cryptography (PQC)**, and **Federated AI Defense**.  
-It aims to provide a resilient, privacy-preserving communication foundation for the next generation of secure and interoperable digital infrastructure.
+> **From message to meaning — secure communication beyond email and chat.**
 
----
-
-## 🌍 Overview
-
-This repository contains both conceptual documentation and working reference code for implementing a federated defense architecture that supports:
-- DID-based identity federation  
-- PQC hybrid key exchange (Kyber, Dilithium, Falcon)  
-- Federated AI anomaly detection and adaptive defense  
-- Low-bandwidth IoT-compatible secure messaging
-
-The framework can operate **independently** or integrate with existing communication layers (e.g., Matrix, XMPP, WeChat, WhatsApp) for hybrid deployment.
+Flux–Echo is a next-generation communication framework that replaces traditional email and chat systems with a decentralized, post-quantum-secure, and AI-defended architecture.  
+It enables open yet verifiable communication across organizations and services while maintaining privacy, authenticity, and trust.
 
 ---
 
-## 🧠 Core Concept
+## 🌐 Overview
 
-| Layer | Function   | Description                                                |
-| ----- | ---------- | ---------------------------------------------------------- |
-| L1    | Network    | Base transport (HTTP/3, QUIC, MQTT, or IoT protocols)      |
-| L2    | Encryption | PQC-based key negotiation and encryption (Kyber + AES-GCM) |
-| L3    | Identity   | DID-based authentication and signature management          |
-| L4    | Session    | Federated routing and dynamic trust layer                  |
-| L5    | Defense    | AI-driven anomaly detection and automated mitigation       |
-| L6    | Governance | Distributed reputation, compliance, and audit framework    |
+**Flux** is the secure, federated communication backbone — integrating **Post-Quantum Cryptography (PQC)**, **Decentralized Identifiers (DID)**, and **Federated AI Defense**.  
+**Echo** represents the user-facing communication experience — human-centric, proactive, and trust-visible interaction units.
 
-The architecture is designed to be **modular**, enabling deployment in IoT networks, federated enterprise systems, and public digital infrastructures.
+Together, Flux and Echo provide an end-to-end foundation for open, interoperable, and verifiable digital communication.
 
 ---
 
-## 🧩 Architecture Diagrams
+## 🧩 Architecture
 
-| File                            | Description                                                  |
-| ------------------------------- | ------------------------------------------------------------ |
-| `architecture-overview.mmd`     | Layered architecture (L1–L6) overview                        |
-| `communication-flow.mmd`        | DID + PQC hybrid key exchange and secure session establishment |
-| `layer-dependencies.mmd`        | Inter-layer dependency and feedback topology                 |
-| `fig1_layered_architecture.png` | Exported PNG version for publication                         |
-| `fig2_did_pqc_flow.png`         | Exported PNG version for publication                         |
-| `fig3_layer_dependencies.png`   | Exported PNG version for publication                         |
-
----
-
-## ⚙️ Proof-of-Concept (PoC)
-
-| File                            | Description                                    |
-| ------------------------------- | ---------------------------------------------- |
-| `poc/pq_did_handshake_demo.py`  | Example of DID + PQC hybrid handshake sequence |
-| `poc/iot_low_bandwidth_test.py` | Simulated IoT low-bandwidth test environment   |
-
-> 🧠 The PoC codes are intended as research demonstrations.  
-> Production-grade implementations should follow NIST PQC guidelines and W3C DID standards.
-
----
-
-## 📊 Research & Documentation
-
-| File                         | Description                                                  |
-| ---------------------------- | ------------------------------------------------------------ |
-| `docs/research-note_v0.1.md` | Core technical paper with references and citations           |
-| `docs/pq-overhead-table.md`  | NIST algorithm comparison & PQC overhead analysis            |
-| `docs/architecture-diagram/` | Mermaid diagrams for layered, flow, and dependency visualization |
-
----
-
-## 🤝 Community & Contribution
-
-| File                           | Description                                     |
-| ------------------------------ | ----------------------------------------------- |
-| `community/CONTRIBUTING.md`    | Contribution guidelines (issues, pull requests) |
-| `community/CODE_OF_CONDUCT.md` | Code of conduct and collaboration principles    |
-| `community/GOVERNANCE.md`      | Governance and decision-making model            |
-
----
-
-## 🧩 Repository Structure
-
-```
+```text
 federated-defense-reference/
 │
 ├── README.md
-├── README_jp.md
 ├── LICENSE
 ├── .gitignore
 │
 ├── docs/
-│  ├── research-note_v0.1.md
-│  ├── pq-overhead-table.md
-│  └── architecture-diagrams/
-│    ├── architecture-overview.mmd
-│    ├── communication-flow.mmd
-│    ├── layer-dependencies.mmd
-│    ├── fig1_layered_architecture.png
-│    ├── fig2_did_pqc_flow.png
-│    └── fig3_layer_dependencies.png
+│   ├── research-note_v0.1.md
+│   ├── pq-overhead-table.md
+│   └── architecture-diagrams/
+│       ├── architecture-overview.mmd
+│       ├── communication-flow.mmd
+│       ├── layer-dependencies.mmd
+│       ├── fig1_layered_architecture.png
+│       ├── fig2_did_pqc_flow.png
+│       └── fig3_layer_dependencies.png
 │
 ├── poc/
-│  ├── pq_did_handshake_demo.py
-│  └── iot_low_bandwidth_test.py
+│   ├── README.md
+│   ├── pq_did_handshake_demo.py
+│   └── iot_low_bandwidth_test.py
 │
 ├── assets/
-│  └── logo.svg
+│   ├── README.md
+│   └── logo.svg
 │
-├── community/
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-└── GOVERNANCE.md
+└── community/
+    ├── CONTRIBUTING.md
+    ├── CODE_OF_CONDUCT.md
+    └── GOVERNANCE.md
+
+> 🧩 Note: Some directories (e.g., `/poc`, `/community`, `/assets`) are placeholders for ongoing development and community contributions.
 ```
-
->  🧩 **Note:** Some directories (e.g., `/poc`, `/community`, `/assets`) are placeholders for ongoing development and community materials.  
->
-> They will be updated as the project evolves.
-
----
-
-##  📜 License
-
-Licensed under the **Apache License 2.0**.  
-
-See [`LICENSE`](./LICENSE) for details.
-
----
-
-##  🌐 Citation
-
-If you use this work in research or derivative projects, please cite it as:
-Aoki, M. (2025). Federated Defense Reference: Open Quantum-Safe Communication Framework Combining DID, PQC, and Federated AI Defense. GitHub Repository.
 
 ------
 
-## 💬 Contact
+## 🧠 Core Concepts
 
-**Project Lead:** Michiru Aoki
-GitHub: [@michiruler](https://github.com/michiruler)
-Location: Tokyo, Japan
-For collaboration or research inquiries, please open an issue or contact via GitHub Discussions.
+| **Layer** | **Name**               | **Description**                                              |
+| --------- | ---------------------- | ------------------------------------------------------------ |
+| L1        | PQ-Secure Transport    | Uses NIST-approved Kyber, Dilithium, Falcon for post-quantum encryption |
+| L2        | DID Identity & VC      | Decentralized digital identity with verifiable credentials   |
+| L3        | Session & Key Rotation | Dynamic session management and key rotation for long-term resilience |
+| L4        | Encrypted Messaging    | Stateless, federated encrypted message routing               |
+| L5        | AI Defense             | Local lightweight anomaly detection + federated rule sharing |
+| L6        | MCP Federation         | Cross-platform connectors (Slack, Teams, WeChat, WhatsApp, etc.) |
 
+------
+
+## 📈 PQ Overhead & Efficiency
+
+See [docs/pq-overhead-table.md](docs/pq-overhead-table.md) for detailed comparison of PQC algorithms and network overhead estimates.
+
+------
+
+## ⚙️ Proof of Concept (PoC)
+
+| **File**                      | **Description**                                        |
+| ----------------------------- | ------------------------------------------------------ |
+| poc/pq_did_handshake_demo.py  | Demonstrates PQ + DID hybrid handshake                 |
+| poc/iot_low_bandwidth_test.py | Tests PQ communication in constrained IoT environments |
+
+------
+
+## 🧩 Security Principles
+
+1. **Post-Quantum Safe:** All cryptographic primitives use PQC-ready algorithms.
+2. **Federated Trust:** Identity and reputation managed via decentralized registries.
+3. **AI + Human Defense:** Local lightweight AI models + open detection rule sharing.
+4. **Resilience by Design:** Verifiable logs, layered isolation, and proactive monitoring.
+
+------
+
+## 🧱 Contribution
+
+Contributions are welcome. Please read:
+
+- [community/CONTRIBUTING.md](community/CONTRIBUTING.md)
+- [community/CODE_OF_CONDUCT.md](community/CODE_OF_CONDUCT.md)
+- [community/GOVERNANCE.md](community/GOVERNANCE.md)
+
+------
+
+## 📜 License
+
+Licensed under the **Apache License 2.0**.
+
+See [LICENSE](LICENSE) for details.
+
+------
+
+## 🪶 Citation
+
+If you use or reference this work in academic or technical contexts, please cite:
+
+```
+Aoki, Michiru (2025). Federated Defense Reference: A Post-Quantum and DID-secure Communication Architecture (Flux–Echo Framework). GitHub Repository. https://github.com/michiruler/federated-defense-reference
+```
+
+------
+
+## 🧭 Next Steps
+
+- Add Flux–Echo terminology section to research-note_v0.1.md
+- Implement demo connectors (Slack, Teams, WeChat)
+- Prepare English research publication with PQC + Federated Defense results
+- Create Figma UI for “Echo Experience” prototype
