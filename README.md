@@ -1,8 +1,8 @@
-# 🌐 Federated Defense Architecture — DID + PQ Communication Reference
+# Federated Defense Architecture — DID + PQ Communication Reference
 
 > **Flux–Echo Framework:** From message to meaning — secure communication beyond email and chat.
 
-## Overview
+## 🌐 Overview
 The **Federated Defense Architecture** is a research-driven framework exploring how **decentralized identifiers (DID)** and **post-quantum cryptography (PQC)** can enable secure, interoperable, and autonomous communication systems.
 
 It aims to replace traditional, centralized communication models (e.g., email and chat) with a **trust-minimized, verifiable, and privacy-preserving messaging layer** that operates across domains and organizations.
@@ -85,6 +85,18 @@ federated-defense-reference/
 │── assets/
 │   └── README.md (image/document placeholders)
 ```
+
+---
+
+## 📘 Architecture Overview
+
+See [`docs/architecture-overview.md`](docs/architecture-overview.md)  
+for detailed explanation and supporting diagrams located in  
+[`docs/architecture-diagrams/`](docs/architecture-diagrams/):
+
+- `architecture-overview-diagrams.mmd` — Layered Architecture Overview  
+- `communication-flow-diagrams.mmd` — DID + PQ Communication Flow  
+- `layer-dependencies-diagrams.mmd` — Layer Interdependencies and Trust Logic
 
 ---
 
